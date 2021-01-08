@@ -1,0 +1,10 @@
+C:\Users\User\source\repos\UserPanel\UserPanel\bin\Debug\UserPanel.exe.config
+C:\Users\User\source\repos\UserPanel\UserPanel\bin\Debug\UserPanel.exe
+C:\Users\User\source\repos\UserPanel\UserPanel\bin\Debug\UserPanel.pdb
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csprojAssemblyReference.cache
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Form1.resources
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Properties.Resources.resources
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csproj.GenerateResource.cache
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.exe
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.pdb
