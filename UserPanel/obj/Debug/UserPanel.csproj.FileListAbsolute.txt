@@ -8,3 +8,7 @@ C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csproj.Genera
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.exe
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.pdb
+C:\Users\User\source\repos\UserPanel\UserPanel\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\User\source\repos\UserPanel\UserPanel\bin\Debug\Guna.UI2.dll
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csproj.CopyComplete
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Main.resources
