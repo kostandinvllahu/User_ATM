@@ -15,6 +15,7 @@ namespace UserPanel
     {
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Documents\Admindtb.mdf;Integrated Security=True;Connect Timeout=30");
 
+        public static string loginUser = null;
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +43,10 @@ namespace UserPanel
 
         private void label4_Click(object sender, EventArgs e)
         {
+            Main m = new Main();
+            m.Close();
             this.Close();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -57,6 +61,7 @@ namespace UserPanel
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
+                loginUser = txtUsername.Text;
                 Main m = new Main();
                 m.Show();
                 this.Hide();
@@ -66,6 +71,11 @@ namespace UserPanel
                 MessageBox.Show("Wrong Username Or Password");
             }
             Con.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
     }
