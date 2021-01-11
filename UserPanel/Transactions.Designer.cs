@@ -44,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtBankCurrency = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +135,7 @@
             this.txtDeposit.Name = "txtDeposit";
             this.txtDeposit.Size = new System.Drawing.Size(100, 20);
             this.txtDeposit.TabIndex = 146;
+            this.txtDeposit.TextChanged += new System.EventHandler(this.txtDeposit_TextChanged);
             // 
             // button1
             // 
@@ -186,7 +188,7 @@
             // 
             // txtBankCurrency
             // 
-            this.txtBankCurrency.Location = new System.Drawing.Point(467, 227);
+            this.txtBankCurrency.Location = new System.Drawing.Point(443, 227);
             this.txtBankCurrency.Name = "txtBankCurrency";
             this.txtBankCurrency.Size = new System.Drawing.Size(100, 20);
             this.txtBankCurrency.TabIndex = 152;
@@ -194,16 +196,24 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(587, 227);
+            this.txtID.Location = new System.Drawing.Point(560, 227);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 153;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(65, 156);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 154;
             // 
             // Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 413);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtBankCurrency);
             this.Controls.Add(this.label5);
@@ -248,5 +258,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBankCurrency;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

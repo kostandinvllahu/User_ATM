@@ -17,6 +17,7 @@ namespace UserPanel
         public Transactions()
         {
             InitializeComponent();
+
         }
         public void populate()
         {
@@ -34,9 +35,13 @@ namespace UserPanel
         {
             fillClient();
             populate();
+
+
             
             
         }
+
+
 
         public void fillClient()
         {
@@ -55,10 +60,41 @@ namespace UserPanel
             Con.Close();
         }
 
+        public void receiver()
+        {
+            //String name = Convert.ToString(Form1.loginUser);
+            Con.Open();
+            SqlCommand cmd = new SqlCommand("select Deposit from Client_tbl where IBAN='" + txtIban.Text + "'", Con);
+            SqlDataReader rdr;
+            rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+              //  label3.Text = (rdr["Username"].ToString());
+                textBox1.Text = (rdr["Deposit"].ToString());
+                //txtID.Text = (rdr["ID"].ToString());
+            }
+            Con.Close();
+        }
+
         public void clear()
         {
             txtIban.Text = "";
             txtAmount.Text = "";
+        }
+
+        public void error()
+        {
+            if(txtIban.Text == "" || txtAmount.Text == "")
+            {
+                MessageBox.Show("Please fill both required fields!");
+            }
+            else
+            {
+                if (txtIban.Text == "" && txtAmount.Text == "")
+                {
+                    MessageBox.Show("Please fill both required fields!");
+                }
+            }
         }
 
        /* public void update()
@@ -76,6 +112,7 @@ namespace UserPanel
 
         public void Update()
         {
+            error();
             Con.Open();
             string myquery = "UPDATE Client_tbl set Deposit='" + txtDeposit.Text +"' where Id=" + txtID.Text + ";";
             SqlCommand cmd = new SqlCommand(myquery, Con);
@@ -86,14 +123,21 @@ namespace UserPanel
             populate();
         }
 
+       // public void payment()
+       // {
+            
+      //  }
+
         public void Deposit()
         {
+            // int update = 0;
             int amount = Convert.ToInt32(txtAmount.Text);
             int deposit = Convert.ToInt32(txtDeposit.Text);
             int total = deposit - amount;
-           // int update = 0;
+            int receiver = Convert.ToInt32(textBox1.Text);
+            int totrec = total + receiver;
 
-            if(amount > deposit)
+            if (amount > deposit)
             {
                 MessageBox.Show("You dont have enough founds to make this transaction!");
                 txtDeposit.Text = "";
@@ -104,9 +148,18 @@ namespace UserPanel
                 {
                     //txtDeposit.Text = "";
                     txtDeposit.Text = total.ToString();
-                    MessageBox.Show("Transaction was made with success!");
-                    Update();
+                    Con.Open();
+                    string myquery = "UPDATE Client_tbl set Deposit='" + totrec + "' where IBAN=" + txtIban.Text + ";";
+                    SqlCommand cmd = new SqlCommand(myquery, Con);
+                    cmd.ExecuteNonQuery(); //WRONG COLOUMN NAME ERROR WITH IBAN
+                    MessageBox.Show("Transaction finished successfully!");
+                    Con.Close();
+                    fillClient();
+                    populate();
                     clear();
+                    //MessageBox.Show("Transaction was made with success!");
+                   // Update();
+                  //  clear();
                 }
             }
         }
@@ -140,7 +193,28 @@ namespace UserPanel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Deposit();
+             if(txtIban.Text == "" || txtAmount.Text == "")
+            {
+                MessageBox.Show("Please fill both required fields!");
+            }
+            else
+            {
+                if (txtIban.Text == "" && txtAmount.Text == "")
+                {
+                    MessageBox.Show("Please fill both required fields!");
+                }
+                else
+                {
+                    receiver();
+                    Deposit();
+                }
+            }
+          //  Deposit();
+        }
+
+        private void txtDeposit_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
