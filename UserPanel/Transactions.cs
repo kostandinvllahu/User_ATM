@@ -56,6 +56,7 @@ namespace UserPanel
                 label3.Text = (rdr["Username"].ToString());
                 txtDeposit.Text = (rdr["Deposit"].ToString());
                 txtID.Text = (rdr["ID"].ToString());
+
             }
             Con.Close();
         }
@@ -64,13 +65,14 @@ namespace UserPanel
         {
             //String name = Convert.ToString(Form1.loginUser);
             Con.Open();
-            SqlCommand cmd = new SqlCommand("select Deposit from Client_tbl where IBAN='" + txtIban.Text + "'", Con);
+            SqlCommand cmd = new SqlCommand("select Deposit, ID from Client_tbl where IBAN='" + txtIban.Text + "'", Con);
             SqlDataReader rdr;
             rdr = cmd.ExecuteReader();
             if (rdr.Read())
             {
               //  label3.Text = (rdr["Username"].ToString());
                 textBox1.Text = (rdr["Deposit"].ToString());
+                textBox2.Text = (rdr["ID"].ToString());
                 //txtID.Text = (rdr["ID"].ToString());
             }
             Con.Close();
@@ -93,6 +95,12 @@ namespace UserPanel
                 if (txtIban.Text == "" && txtAmount.Text == "")
                 {
                     MessageBox.Show("Please fill both required fields!");
+                }
+
+                if(txtID.Text == textBox2.Text)
+                {
+                    MessageBox.Show("You cant send money to yourself!");
+                    clear();
                 }
             }
         }
@@ -117,7 +125,7 @@ namespace UserPanel
             string myquery = "UPDATE Client_tbl set Deposit='" + txtDeposit.Text +"' where Id=" + txtID.Text + ";";
             SqlCommand cmd = new SqlCommand(myquery, Con);
             cmd.ExecuteNonQuery();
-            MessageBox.Show("Data Successfully Edited!");
+            //MessageBox.Show("Data Successfully Edited!");
             Con.Close();
             fillClient();
             populate();
@@ -149,11 +157,12 @@ namespace UserPanel
                     //txtDeposit.Text = "";
                     txtDeposit.Text = total.ToString();
                     Con.Open();
-                    string myquery = "UPDATE Client_tbl set Deposit='" + totrec + "' where IBAN=" + txtIban.Text + ";";
+                    string myquery = "UPDATE Client_tbl set Deposit='" + totrec + "' where ID=" + textBox2.Text + ";";
                     SqlCommand cmd = new SqlCommand(myquery, Con);
-                    cmd.ExecuteNonQuery(); //WRONG COLOUMN NAME ERROR WITH IBAN
+                    cmd.ExecuteNonQuery(); 
                     MessageBox.Show("Transaction finished successfully!");
                     Con.Close();
+                    Update();
                     fillClient();
                     populate();
                     clear();
@@ -207,6 +216,7 @@ namespace UserPanel
                 {
                     receiver();
                     Deposit();
+                    //Update();
                 }
             }
           //  Deposit();
