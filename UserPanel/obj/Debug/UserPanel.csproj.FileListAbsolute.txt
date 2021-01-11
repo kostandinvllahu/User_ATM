@@ -13,3 +13,4 @@ C:\Users\User\source\repos\UserPanel\UserPanel\bin\Debug\Guna.UI2.dll
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csproj.CopyComplete
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Main.resources
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Settings.resources
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Transactions.resources

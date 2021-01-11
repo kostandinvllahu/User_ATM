@@ -71,5 +71,17 @@ namespace UserPanel
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            Transactions t = new Transactions();
+            t.Show();
+            this.Hide();
+        }
     }
 }
