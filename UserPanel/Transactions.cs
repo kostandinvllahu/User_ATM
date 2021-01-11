@@ -35,10 +35,7 @@ namespace UserPanel
         {
             fillClient();
             populate();
-
-
-            
-            
+            valut();
         }
 
 
@@ -48,7 +45,7 @@ namespace UserPanel
             //txtID.Text = Convert.ToString(Form1.loginUser);
             String name = Convert.ToString(Form1.loginUser);
             Con.Open();
-            SqlCommand cmd = new SqlCommand("select Username, Deposit, ID from Client_tbl where IdCard='" + name + "'", Con);
+            SqlCommand cmd = new SqlCommand("select Username, Deposit, ID, IBAN, Valut from Client_tbl where IdCard='" + name + "'", Con);
             SqlDataReader rdr;
             rdr = cmd.ExecuteReader();
             if (rdr.Read())
@@ -56,7 +53,22 @@ namespace UserPanel
                 label3.Text = (rdr["Username"].ToString());
                 txtDeposit.Text = (rdr["Deposit"].ToString());
                 txtID.Text = (rdr["ID"].ToString());
+                textBox3.Text = (rdr["IBAN"].ToString());
+                textBox4.Text = (rdr["Valut"].ToString());
 
+            }
+            Con.Close();
+        }
+
+        public void valut()
+        {
+            Con.Open();
+            SqlCommand cmd = new SqlCommand("select Exchange from Valut_tbl where Valut='" + textBox4.Text + "'", Con);
+            SqlDataReader rdr;
+            rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                txtValut.Text = (rdr["Exchange"].ToString());
             }
             Con.Close();
         }
@@ -214,9 +226,18 @@ namespace UserPanel
                 }
                 else
                 {
-                    receiver();
-                    Deposit();
-                    //Update();
+                    if (txtIban.Text == textBox3.Text)
+                    {
+                        MessageBox.Show("You cant send money to yourself!");
+                        clear();
+                    }
+                    else
+                    {
+                        receiver();
+                        Deposit();
+                        //Update();
+                    }
+
                 }
             }
           //  Deposit();

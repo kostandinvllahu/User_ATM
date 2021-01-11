@@ -46,6 +46,9 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtValut = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -189,7 +192,7 @@
             // 
             // txtBankCurrency
             // 
-            this.txtBankCurrency.Location = new System.Drawing.Point(443, 227);
+            this.txtBankCurrency.Location = new System.Drawing.Point(430, 227);
             this.txtBankCurrency.Name = "txtBankCurrency";
             this.txtBankCurrency.Size = new System.Drawing.Size(100, 20);
             this.txtBankCurrency.TabIndex = 152;
@@ -197,7 +200,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(560, 227);
+            this.txtID.Location = new System.Drawing.Point(536, 227);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 153;
@@ -216,11 +219,35 @@
             this.textBox2.Size = new System.Drawing.Size(22, 20);
             this.textBox2.TabIndex = 155;
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(642, 226);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 156;
+            // 
+            // txtValut
+            // 
+            this.txtValut.Location = new System.Drawing.Point(324, 253);
+            this.txtValut.Name = "txtValut";
+            this.txtValut.Size = new System.Drawing.Size(100, 20);
+            this.txtValut.TabIndex = 157;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(430, 253);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 158;
+            // 
             // Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 413);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtValut);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtID);
@@ -269,5 +296,8 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtValut;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
