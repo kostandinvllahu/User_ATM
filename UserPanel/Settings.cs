@@ -45,7 +45,7 @@ namespace UserPanel
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Update();
         }
 
         public void Data()
@@ -61,6 +61,20 @@ namespace UserPanel
                 textBox3.Text = (rdr["ID"].ToString());
             }
             Con.Close();
+        }
+
+        public void Update()
+        {
+            Con.Open();
+            string myquery = "UPDATE Client_tbl set Phone='" + textBox1.Text + "',Password='" + textBox2.Text + "' where Id=" + textBox3.Text + ";";
+            SqlCommand cmd = new SqlCommand(myquery, Con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Data Successfully Edited!");
+            Con.Close();
+            Data();
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
+
         }
 
         public void fillClient()

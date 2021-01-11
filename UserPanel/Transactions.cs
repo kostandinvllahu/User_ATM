@@ -16,5 +16,10 @@ namespace UserPanel
         {
             InitializeComponent();
         }
+
+        private void Transactions_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
