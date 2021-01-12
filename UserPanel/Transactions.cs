@@ -96,26 +96,7 @@ namespace UserPanel
             txtAmount.Text = "";
         }
 
-        public void error()
-        {
-            if(txtIban.Text == "" || txtAmount.Text == "")
-            {
-                MessageBox.Show("Please fill both required fields!");
-            }
-            else
-            {
-                if (txtIban.Text == "" && txtAmount.Text == "")
-                {
-                    MessageBox.Show("Please fill both required fields!");
-                }
-
-                if(txtID.Text == textBox2.Text)
-                {
-                    MessageBox.Show("You cant send money to yourself!");
-                    clear();
-                }
-            }
-        }
+        
 
        /* public void update()
         {
@@ -132,7 +113,7 @@ namespace UserPanel
 
         public void Update()
         {
-            error();
+           // error();
             Con.Open();
             string myquery = "UPDATE Client_tbl set Deposit='" + txtDeposit.Text +"' where Id=" + txtID.Text + ";";
             SqlCommand cmd = new SqlCommand(myquery, Con);
@@ -153,18 +134,20 @@ namespace UserPanel
             // int update = 0;
             int amount = Convert.ToInt32(txtAmount.Text);
             int deposit = Convert.ToInt32(txtDeposit.Text);
-            int total = deposit - amount;
             int receiver = Convert.ToInt32(textBox1.Text);
+            int valut = Convert.ToInt32(txtValut.Text);
+            int exchange = amount / valut;
+            int total = deposit - exchange;
             int totrec = total + receiver;
 
-            if (amount > deposit)
+            if (exchange > deposit)
             {
                 MessageBox.Show("You dont have enough founds to make this transaction!");
-                txtDeposit.Text = "";
+                Update();
             }
             else
             {
-                if( amount <= deposit)
+                if( exchange <= deposit)
                 {
                     //txtDeposit.Text = "";
                     txtDeposit.Text = total.ToString();
@@ -173,6 +156,7 @@ namespace UserPanel
                     SqlCommand cmd = new SqlCommand(myquery, Con);
                     cmd.ExecuteNonQuery(); 
                     MessageBox.Show("Transaction finished successfully!");
+                    MessageBox.Show("You sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec);
                     Con.Close();
                     Update();
                     fillClient();
