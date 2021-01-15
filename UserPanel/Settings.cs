@@ -74,7 +74,6 @@ namespace UserPanel
             Data();
             textBox1.ReadOnly = true;
             textBox2.ReadOnly = true;
-
         }
 
         public void fillClient()

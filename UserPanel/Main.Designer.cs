@@ -64,6 +64,7 @@
             this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Size = new System.Drawing.Size(77, 66);
             this.guna2ImageButton2.TabIndex = 120;
+            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
             // guna2ImageButton1
             // 
@@ -141,6 +142,7 @@
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 124;
             this.label4.Text = "User: ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -153,6 +155,7 @@
             this.label5.TabIndex = 125;
             this.label5.Text = "Settings";
             this.label5.Visible = false;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 

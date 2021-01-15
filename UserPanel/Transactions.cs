@@ -98,21 +98,6 @@ namespace UserPanel
             textBox2.Text = "";
         }
 
-        
-
-       /* public void update()
-        {
-          //  String ID = Convert.ToString(Form1.loginUser);
-            Con.Open();
-            string myquery = "UPDATE Client_tbl set Deposit='" + txtDeposit.Text +"' where IdCard=" + txtID.Text + ";";
-            SqlCommand cmd = new SqlCommand(myquery, Con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Data Successfully Edited!");
-            Con.Close();
-            fillClient();
-            populate();
-        }*/
-
         public void Update()
         {
            // error();
@@ -126,14 +111,9 @@ namespace UserPanel
             populate();
         }
 
-       // public void payment()
-       // {
-            
-      //  }
-
         public void Deposit()
         {
-            // int update = 0;
+
             int amount = Convert.ToInt32(txtAmount.Text);
             int deposit = Convert.ToInt32(txtDeposit.Text);
             int receiver = Convert.ToInt32(textBox1.Text);

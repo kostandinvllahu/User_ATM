@@ -83,5 +83,22 @@ namespace UserPanel
             t.Show();
             this.Hide();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            History h = new History();
+            h.Show();
+            this.Close();
+        }
     }
 }
