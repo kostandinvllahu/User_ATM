@@ -94,6 +94,8 @@ namespace UserPanel
         {
             txtIban.Text = "";
             txtAmount.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
         
@@ -230,6 +232,11 @@ namespace UserPanel
         private void txtDeposit_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }

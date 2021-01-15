@@ -141,5 +141,8 @@
   <ItemGroup>
     <None Include="Resources\databaz-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

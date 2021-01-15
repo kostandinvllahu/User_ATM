@@ -126,7 +126,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::UserPanel.Properties.Resources.admin;
+            this.pictureBox1.Image = global::UserPanel.Properties.Resources.admin_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(215, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(42, 40);
