@@ -15,3 +15,5 @@ C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Settings.reso
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Transactions.resources
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.csprojAssemblyReference.cache
 C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.History.resources
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Testing.resources
+C:\Users\User\source\repos\UserPanel\UserPanel\obj\Debug\UserPanel.Access.resources
