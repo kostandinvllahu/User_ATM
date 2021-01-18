@@ -16,7 +16,7 @@ namespace UserPanel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Access());
+            Application.Run(new Form1());
         }
     }
 }
