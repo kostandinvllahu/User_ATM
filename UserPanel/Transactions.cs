@@ -71,13 +71,25 @@ namespace UserPanel
                 txtValut.Text = (rdr["Exchange"].ToString());
             }
             Con.Close();
+
+             Con.Open();
+            SqlCommand abc = new SqlCommand("select Exchange from Valut_tbl where Valut='" + textBox5.Text + "'", Con);
+            SqlDataReader rd;
+            rd = abc.ExecuteReader();
+            if (rd.Read())
+            {
+                textBox6.Text = (rd["Exchange"].ToString());
+            }
+            Con.Close();
         }
+
+        
 
         public void receiver()
         {
             //String name = Convert.ToString(Form1.loginUser);
             Con.Open();
-            SqlCommand cmd = new SqlCommand("select Deposit, ID from Client_tbl where IBAN='" + txtIban.Text + "'", Con);
+            SqlCommand cmd = new SqlCommand("select Deposit, ID, Valut from Client_tbl where IBAN='" + txtIban.Text + "'", Con);
             SqlDataReader rdr;
             rdr = cmd.ExecuteReader();
             if (rdr.Read())
@@ -85,6 +97,7 @@ namespace UserPanel
               //  label3.Text = (rdr["Username"].ToString());
                 textBox1.Text = (rdr["Deposit"].ToString());
                 textBox2.Text = (rdr["ID"].ToString());
+                textBox5.Text = (rdr["Valut"].ToString());
                 //txtID.Text = (rdr["ID"].ToString());
             }
             Con.Close();
@@ -178,6 +191,13 @@ namespace UserPanel
             
         }
 
+        public void transaHistory()
+        {
+            Con.Open();
+
+            Con.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
              if(txtIban.Text == "" || txtAmount.Text == "")
@@ -217,6 +237,21 @@ namespace UserPanel
         private void button2_Click(object sender, EventArgs e)
         {
             clear();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            valut();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            receiver();
         }
     }
 }
