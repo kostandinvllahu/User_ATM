@@ -131,9 +131,12 @@ namespace UserPanel
             int deposit = Convert.ToInt32(txtDeposit.Text);
             int receiver = Convert.ToInt32(textBox1.Text);
             int valut = Convert.ToInt32(txtValut.Text);
+            int recvalut = Convert.ToInt32(textBox6.Text);
             int exchange = amount / valut;
             int total = deposit - exchange;
-            int totrec = total + receiver;
+            int receiv = exchange * valut;
+            int lastexchange = receiv / recvalut;
+            int totrec = lastexchange +  receiver;
 
             if (exchange > deposit)
             {
