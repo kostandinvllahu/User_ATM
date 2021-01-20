@@ -71,16 +71,6 @@ namespace UserPanel
                 txtValut.Text = (rdr["Exchange"].ToString());
             }
             Con.Close();
-
-             Con.Open();
-            SqlCommand abc = new SqlCommand("select Exchange from Valut_tbl where Valut='" + textBox5.Text + "'", Con);
-            SqlDataReader rd;
-            rd = abc.ExecuteReader();
-            if (rd.Read())
-            {
-                textBox6.Text = (rd["Exchange"].ToString());
-            }
-            Con.Close();
         }
 
         
@@ -101,6 +91,28 @@ namespace UserPanel
                 //txtID.Text = (rdr["ID"].ToString());
             }
             Con.Close();
+
+            Con.Open();
+            SqlCommand abc = new SqlCommand("select Exchange from Valut_tbl where Valut='" + textBox5.Text + "'", Con);
+            SqlDataReader rd;
+            rd = abc.ExecuteReader();
+            if (rd.Read())
+            {
+                textBox6.Text = (rd["Exchange"].ToString());
+            }
+            Con.Close();
+
+            if(textBox6.Text == "")
+            {
+                MessageBox.Show("Wrong IBAN please try again");
+            }
+            else
+            {
+                if(textBox6.TextLength != null)
+                {
+                    MessageBox.Show("Iban exist");
+                }
+            }
         }
 
         public void clear()
@@ -109,6 +121,8 @@ namespace UserPanel
             txtAmount.Text = "";
             textBox1.Text = "";
             textBox2.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
         }
 
         public void Update()

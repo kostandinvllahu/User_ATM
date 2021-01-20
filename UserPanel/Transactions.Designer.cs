@@ -51,7 +51,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -218,6 +217,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 154;
+            this.textBox1.Visible = false;
             // 
             // textBox2
             // 
@@ -226,6 +226,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(22, 20);
             this.textBox2.TabIndex = 155;
+            this.textBox2.Visible = false;
             // 
             // textBox3
             // 
@@ -257,36 +258,28 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(324, 114);
+            this.textBox5.Location = new System.Drawing.Point(65, 135);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(68, 20);
             this.textBox5.TabIndex = 160;
+            this.textBox5.Visible = false;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(199, 123);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 22);
-            this.button4.TabIndex = 161;
-            this.button4.Text = "Enter";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(199, 156);
+            this.textBox6.Location = new System.Drawing.Point(136, 135);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(68, 20);
             this.textBox6.TabIndex = 162;
+            this.textBox6.Visible = false;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(408, 114);
+            this.button5.Location = new System.Drawing.Point(270, 180);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 22);
+            this.button5.Size = new System.Drawing.Size(48, 22);
             this.button5.TabIndex = 163;
-            this.button5.Text = "Enter";
+            this.button5.Text = "Verify";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -297,7 +290,6 @@
             this.ClientSize = new System.Drawing.Size(800, 413);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.textBox4);
@@ -356,7 +348,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button5;
     }
