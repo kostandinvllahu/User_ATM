@@ -275,7 +275,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(270, 180);
+            this.button5.Location = new System.Drawing.Point(270, 182);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(48, 22);
             this.button5.TabIndex = 163;
@@ -311,7 +311,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Transactions";
             this.Text = "Transactions";
             this.Load += new System.EventHandler(this.Transactions_Load);

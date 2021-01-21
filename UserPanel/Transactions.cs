@@ -168,7 +168,7 @@ namespace UserPanel
                     SqlCommand cmd = new SqlCommand(myquery, Con);
                     cmd.ExecuteNonQuery(); 
                     MessageBox.Show("Transaction finished successfully!");
-                    MessageBox.Show("You sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec);
+                    MessageBox.Show(Convert.ToString(Form1.loginUser) + "sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec);
                     Con.Close();
                     Update();
                     fillClient();
