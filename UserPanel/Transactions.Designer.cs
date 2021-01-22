@@ -42,7 +42,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtBankCurrency = new System.Windows.Forms.TextBox();
+            this.txtIdCard = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -195,13 +195,13 @@
             this.label5.TabIndex = 151;
             this.label5.Text = "Ammount";
             // 
-            // txtBankCurrency
+            // txtIdCard
             // 
-            this.txtBankCurrency.Location = new System.Drawing.Point(430, 227);
-            this.txtBankCurrency.Name = "txtBankCurrency";
-            this.txtBankCurrency.Size = new System.Drawing.Size(100, 20);
-            this.txtBankCurrency.TabIndex = 152;
-            this.txtBankCurrency.TextChanged += new System.EventHandler(this.txtBankCurrency_TextChanged);
+            this.txtIdCard.Location = new System.Drawing.Point(430, 227);
+            this.txtIdCard.Name = "txtIdCard";
+            this.txtIdCard.Size = new System.Drawing.Size(100, 20);
+            this.txtIdCard.TabIndex = 152;
+            this.txtIdCard.TextChanged += new System.EventHandler(this.txtBankCurrency_TextChanged);
             // 
             // txtID
             // 
@@ -273,22 +273,21 @@
             this.textBox6.TabIndex = 162;
             this.textBox6.Visible = false;
             // 
-            // button5
+            // textBox7
             // 
-            this.button5.Location = new System.Drawing.Point(270, 182);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(48, 22);
-            this.button5.TabIndex = 163;
-            this.button5.Text = "Verify";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.textBox7.Location = new System.Drawing.Point(503, 279);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(27, 20);
+            this.textBox7.TabIndex = 163;
+            this.textBox7.Visible = false;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 413);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtMessage);
@@ -298,7 +297,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtID);
-            this.Controls.Add(this.txtBankCurrency);
+            this.Controls.Add(this.txtIdCard);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
@@ -338,7 +337,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtBankCurrency;
+        private System.Windows.Forms.TextBox txtIdCard;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
@@ -348,6 +347,6 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }

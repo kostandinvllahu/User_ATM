@@ -45,7 +45,7 @@ namespace UserPanel
             //txtID.Text = Convert.ToString(Form1.loginUser);
             String name = Convert.ToString(Form1.loginUser);
             Con.Open();
-            SqlCommand cmd = new SqlCommand("select Username, Deposit, ID, IBAN, Valut from Client_tbl where IdCard='" + name + "'", Con);
+            SqlCommand cmd = new SqlCommand("select Username, Deposit, ID, IBAN, IdCard, Valut from Client_tbl where IdCard='" + name + "'", Con);
             SqlDataReader rdr;
             rdr = cmd.ExecuteReader();
             if (rdr.Read())
@@ -55,6 +55,7 @@ namespace UserPanel
                 txtID.Text = (rdr["ID"].ToString());
                 textBox3.Text = (rdr["IBAN"].ToString());
                 textBox4.Text = (rdr["Valut"].ToString());
+                txtIdCard.Text = (rdr["IdCard"].ToString());
 
             }
             Con.Close();
@@ -168,8 +169,10 @@ namespace UserPanel
                     SqlCommand cmd = new SqlCommand(myquery, Con);
                     cmd.ExecuteNonQuery(); 
                     MessageBox.Show("Transaction finished successfully!");
-                    MessageBox.Show(Convert.ToString(Form1.loginUser) + "sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec);
+                    MessageBox.Show("You sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec);
                     Con.Close();
+                    txtMessage.Text = "You sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec;
+                    //transaHistory(); KJO NUK PUNON!
                     Update();
                     fillClient();
                     populate();
@@ -179,6 +182,11 @@ namespace UserPanel
                   //  clear();
                 }
             }
+        }
+
+        public void TransHistory()
+        {
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -208,11 +216,19 @@ namespace UserPanel
             
         }
 
+        //E KE LENE KETU KRIJO NJE DATABAZE TE RE!
+
         public void transaHistory()
         {
             Con.Open();
+            SqlCommand cmd = new SqlCommand("insert into Transactions_tbl values(" + txtID.Text + ",'" + label3.Text + "','" + txtMessage.Text + "','" + txtIban.Text + "','" + txtDeposit.Text + "','" + txtIdCard.Text + "')", Con);
 
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Transaction Successfully Added!");
             Con.Close();
+            populate();
+            //updateroomstate();
+            clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -269,6 +285,11 @@ namespace UserPanel
         private void button5_Click(object sender, EventArgs e)
         {
             receiver();
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
