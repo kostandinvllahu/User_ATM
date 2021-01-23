@@ -52,7 +52,6 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -273,21 +272,11 @@
             this.textBox6.TabIndex = 162;
             this.textBox6.Visible = false;
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(503, 279);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(27, 20);
-            this.textBox7.TabIndex = 163;
-            this.textBox7.Visible = false;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
             // Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 413);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtMessage);
@@ -347,6 +336,5 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
     }
 }
