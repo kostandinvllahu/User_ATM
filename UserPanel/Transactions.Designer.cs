@@ -52,6 +52,7 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +121,7 @@
             this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 143;
             this.label3.Text = "Username";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtIban
             // 
@@ -208,6 +210,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 153;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // textBox1
             // 
@@ -272,11 +275,21 @@
             this.textBox6.TabIndex = 162;
             this.textBox6.Visible = false;
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(154, 114);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
+            this.txtUsername.Size = new System.Drawing.Size(60, 20);
+            this.txtUsername.TabIndex = 163;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            // 
             // Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 413);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.txtMessage);
@@ -336,5 +349,6 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtUsername;
     }
 }

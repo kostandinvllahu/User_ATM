@@ -59,6 +59,7 @@ namespace UserPanel
 
             }
             Con.Close();
+            txtUsername.Text = label3.Text;
         }
 
         public void valut()
@@ -172,7 +173,7 @@ namespace UserPanel
                     MessageBox.Show("You sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec);
                     Con.Close();
                     txtMessage.Text = "You sent " + amount + " with valut is changed to " + exchange + " the client will get " + totrec;
-                    //transaHistory(); KJO NUK PUNON!
+                    transaHistory(); //KJO NUK PUNON!
                     Update();
                     fillClient();
                     populate();
@@ -221,7 +222,7 @@ namespace UserPanel
         public void transaHistory()
         {
             Con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Transactions_tbl values(" + txtID.Text + ",'" + label3.Text + "','" + txtMessage.Text + "','" + txtIban.Text + "','" + txtDeposit.Text + "','" + txtIdCard.Text + "')", Con);
+            SqlCommand cmd = new SqlCommand("insert into Transactions_tbl values(" + txtID.Text + ",'" + txtUsername.Text + "','" + txtMessage.Text + "','" + txtIban.Text + "','" + txtDeposit.Text + "','" + txtIdCard.Text + "')", Con);
 
             cmd.ExecuteNonQuery();
             MessageBox.Show("Transaction Successfully Added!");
@@ -288,6 +289,21 @@ namespace UserPanel
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
         {
             
         }
