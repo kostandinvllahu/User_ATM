@@ -38,6 +38,7 @@ namespace UserPanel
             valut();
         }
 
+        //RREGULLO BUG
 
 
         public void fillClient()
