@@ -38,7 +38,8 @@ namespace UserPanel
             valut();
         }
 
-        //RREGULLO BUG
+        //RREGULLO BUG 
+        //Shiko dhe ketu
 
 
         public void fillClient()
